@@ -12,9 +12,9 @@ function App() {
       </header>
 
       <div className="tab_list">
-        <ListTab type="Todo" />
-        <ListTab type="In Progress" />
-        <ListTab type="Done" />
+        <ListTab type="todo" />
+        <ListTab type="progress" />
+        <ListTab type="done" />
       </div>
     </div>
   );
