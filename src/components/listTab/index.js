@@ -23,11 +23,11 @@ export default function ListTab({ type }) {
           <img src={Dots} alt="" />
         </div>
         <div className="list_container">
-          {/* {tasks &&
+          {tasks.length > 0 &&
             tasks.map(
               (curr) =>
                 curr.type === type && <Task data={curr} setTasks={setTasks} />
-            )} */}
+            )}
         </div>
       </div>
       <div className="transparency"></div>
