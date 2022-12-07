@@ -23,11 +23,10 @@ export default function ListTab({ type }) {
         </div>
         <div className="list_container">
           {tasks &&
-            tasks.map((curr) => {
-              return (
+            tasks.map(
+              (curr) =>
                 curr.type === type && <Task data={curr} setTasks={setTasks} />
-              );
-            })}
+            )}
         </div>
       </div>
       <div className="transparency"></div>
