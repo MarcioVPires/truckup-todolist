@@ -12,6 +12,7 @@ export default function ListTab({ type }) {
 
   useEffect(() => {
     console.log(tasks);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
