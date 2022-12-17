@@ -3,17 +3,13 @@ import Dots from "../../assets/dots.png";
 import Task from "../task";
 import { useState, useEffect } from "react";
 
-export default function ListTab({ type }) {
-  const [tasks, setTasks] = useState(() => {
-    const list = JSON.parse(localStorage.getItem("task-list"));
+export default function ListTab({ type, tasks }) {
+  const [openedTask, setOpenedTask] = useState("none");
 
-    return list ? list : { type: "todo", name: "no task" };
-  });
-
-  useEffect(() => {
-    console.log(tasks);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   console.log(tasks);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className="tab_container">
@@ -24,10 +20,14 @@ export default function ListTab({ type }) {
         </div>
         <div className="list_container">
           {tasks.length > 0 &&
-            tasks.map(
-              (curr) =>
-                curr.type === type && <Task data={curr} setTasks={setTasks} />
-            )}
+            tasks.map((curr, i) => (
+              <Task
+                key={`${type}${i}`}
+                data={curr}
+                openedTask={openedTask}
+                setOpenedTask={setOpenedTask}
+              />
+            ))}
         </div>
       </div>
       <div className="transparency"></div>

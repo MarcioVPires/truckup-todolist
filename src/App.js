@@ -1,8 +1,18 @@
 import "./App.css";
 import ListTab from "./components/listTab";
 import Logo from "./assets/logo.svg";
+import { useState } from "react";
 
 function App() {
+  const [tasks, setTasks] = useState(() => {
+    const list = JSON.parse(localStorage.getItem("task-list"));
+    return list ? list : { type: "todo", name: "no task" };
+  });
+
+  function selectTasksType(type) {
+    return tasks.filter((curr) => curr.type === type && curr);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,9 +22,9 @@ function App() {
       </header>
 
       <div className="tab_list">
-        <ListTab type="todo" />
-        <ListTab type="progress" />
-        <ListTab type="done" />
+        <ListTab type="todo" tasks={selectTasksType("todo")} />
+        <ListTab type="progress" tasks={selectTasksType("progress")} />
+        <ListTab type="done" tasks={selectTasksType("done")} />
       </div>
     </div>
   );
