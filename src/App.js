@@ -16,9 +16,9 @@ function App() {
       </header>
 
       <div className="tab_list">
-        <ListTab type="todo" tasks={tasks.todo} />
-        <ListTab type="progress" tasks={tasks.progress} />
-        <ListTab type="done" tasks={tasks.done} />
+        <ListTab title="To-do" type="todo" tasks={tasks.todo} />
+        <ListTab title="In Progress" type="progress" tasks={tasks.progress} />
+        <ListTab title="Done" type="done" tasks={tasks.done} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Dots from "../../assets/dots.png";
 import Task from "../task";
 import { useState, useEffect } from "react";
 
-export default function ListTab({ type, tasks }) {
+export default function ListTab({ title, type, tasks }) {
   const [openedTask, setOpenedTask] = useState("none");
   console.log("tasks");
   console.log(tasks);
@@ -16,7 +16,7 @@ export default function ListTab({ type, tasks }) {
     <div className="tab_container">
       <div className="tab_wrapper">
         <div className="tab_header">
-          <h1>{type}</h1>
+          <h1>{title}</h1>
           <img src={Dots} alt="" />
         </div>
         <div className="list_container">

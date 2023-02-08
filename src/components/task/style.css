@@ -1,1 +1,24 @@
+.task_wrapper {
+  padding: 8px;
+  border-radius: 20px;
+}
 
+.task_wrapper:hover {
+  background-color: #f2f2f2;
+}
+
+.task_title {
+  font-size: 1.2em;
+  font-weight: 400;
+  font-family: "Inria Serif", serif;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.expanded_task_title {
+  font-size: 1.6em;
+  font-weight: bold;
+  font-family: "Inria Serif", serif;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
