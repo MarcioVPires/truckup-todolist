@@ -9,10 +9,6 @@ function App() {
     return list ? list : { type: "todo", name: "no task" };
   });
 
-  function selectTasksType(type) {
-    return tasks.filter((curr) => curr.type === type && curr);
-  }
-
   return (
     <div className="App">
       <header className="App-header">
@@ -22,9 +18,9 @@ function App() {
       </header>
 
       <div className="tab_list">
-        <ListTab type="todo" tasks={selectTasksType("todo")} />
-        <ListTab type="progress" tasks={selectTasksType("progress")} />
-        <ListTab type="done" tasks={selectTasksType("done")} />
+        <ListTab type="todo" tasks={tasks.todo} />
+        <ListTab type="progress" tasks={tasks.progress} />
+        <ListTab type="done" tasks={tasks.done} />
       </div>
     </div>
   );
