@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 
 export default function ListTab({ type, tasks }) {
   const [openedTask, setOpenedTask] = useState("none");
-
+  console.log("tasks");
+  console.log(tasks);
   // useEffect(() => {
   //   console.log(tasks);
   //   // eslint-disable-next-line react-hooks/exhaustive-deps

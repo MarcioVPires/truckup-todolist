@@ -1,13 +1,11 @@
 import "./App.css";
+import { useState } from "react";
+import { getTaskList } from "./components/utils/fetching-tasks";
 import ListTab from "./components/listTab";
 import Logo from "./assets/logo.svg";
-import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState(() => {
-    const list = JSON.parse(localStorage.getItem("task-list"));
-    return list ? list : { type: "todo", name: "no task" };
-  });
+  const tasks = getTaskList();
 
   return (
     <div className="App">
