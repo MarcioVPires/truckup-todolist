@@ -1,5 +1,5 @@
 import "./style.css";
-import Dots from "../../assets/dots.png";
+import Dots from "../../assets/img/dots.png";
 import Task from "../task";
 import { useState, useEffect } from "react";
 

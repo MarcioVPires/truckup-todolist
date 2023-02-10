@@ -1,8 +1,8 @@
 import "./App.css";
-import { useState } from "react";
 import { getTaskList } from "./components/utils/fetching-tasks";
+import DragButton from "./components/dragButton";
 import ListTab from "./components/listTab";
-import Logo from "./assets/logo.svg";
+import Logo from "./assets/img/logo.svg";
 
 function App() {
   const tasks = getTaskList();
@@ -13,6 +13,7 @@ function App() {
         <img src={Logo} alt="" />
         <h1>Room of Thoughts</h1>
         <p>Don't think, throw in the room</p>
+        <DragButton />
       </header>
 
       <div className="tab_list">

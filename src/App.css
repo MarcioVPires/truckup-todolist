@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: "recoleta", "Inria Serif", serif;
   background: radial-gradient(
     117.04% 95.93% at 50% 0%,
     #fbfbfb 0%,
@@ -22,7 +23,6 @@ header {
 header h1,
 .tab_header h1 {
   margin-bottom: 0;
-  font-family: "Inria Serif", serif;
 }
 
 header p {
