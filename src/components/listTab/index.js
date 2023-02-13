@@ -2,6 +2,7 @@ import "./style.css";
 import Dots from "../../assets/img/dots.png";
 import Task from "../task";
 import { useState, useEffect } from "react";
+import done_title_symbol from "../../assets/img/done-symbol.png";
 
 export default function ListTab({ title, type, tasks }) {
   const [openedTask, setOpenedTask] = useState("none");
@@ -16,7 +17,12 @@ export default function ListTab({ title, type, tasks }) {
     <div className="tab_container">
       <div className="tab_wrapper">
         <div className="tab_header">
-          <h1>{title}</h1>
+          <span>
+            {type === "done" && (
+              <img src={done_title_symbol} alt="done_title_symbol" />
+            )}
+            <h1>{title}</h1>
+          </span>
           <img src={Dots} alt="" />
         </div>
         <div className="list_container">
@@ -27,6 +33,7 @@ export default function ListTab({ title, type, tasks }) {
                 data={curr}
                 openedTask={openedTask}
                 setOpenedTask={setOpenedTask}
+                type={type}
               />
             ))}
         </div>

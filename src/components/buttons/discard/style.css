@@ -1,0 +1,24 @@
+.discard_task_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 30px;
+  background-color: #e7d6d6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.discard_task_btn:hover {
+  scale: 1.1;
+}
+
+.discard_task_btn p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.discard_task_btn img {
+  margin-right: 8px;
+}
