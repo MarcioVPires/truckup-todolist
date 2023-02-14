@@ -3,16 +3,25 @@
   border-radius: 20px;
 }
 
-.task_wrapper:hover {
-  background-color: #f2f2f2;
-}
-
 .task_container {
   width: 100%;
   height: 181px;
   background-color: #f2f2f2;
   border-radius: 20px;
   padding: 20px 14px 14px 40px;
+  transition: all 0.1s linear;
+}
+
+.task_container_collapse {
+  height: 38px;
+  transition: all 0.1s linear;
+  border-radius: 10px;
+  background-color: white;
+  padding: 8px 14px 0px 40px;
+}
+
+.task_container_collapse:hover {
+  background-color: #f2f2f2;
 }
 
 .line {
@@ -24,6 +33,13 @@
 .task_title {
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.task_title_collapsed {
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.1s linear;
 }
@@ -76,4 +92,5 @@ textarea:focus {
 
 .listIcon {
   position: absolute;
+  right: 292px;
 }

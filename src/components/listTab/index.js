@@ -1,17 +1,16 @@
 import "./style.css";
 import Dots from "../../assets/img/dots.png";
 import Task from "../task";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import done_title_symbol from "../../assets/img/done-symbol.png";
+import { useEffect } from "react";
 
 export default function ListTab({ title, type, tasks }) {
-  const [openedTask, setOpenedTask] = useState("none");
-  console.log("tasks");
-  console.log(tasks);
-  // useEffect(() => {
-  //   console.log(tasks);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  const [activeTask, setActiveTask] = useState("none");
+
+  function toggle(listID) {
+    listID === activeTask ? setActiveTask("none") : setActiveTask(listID);
+  }
 
   return (
     <div className="tab_container">
@@ -30,10 +29,11 @@ export default function ListTab({ title, type, tasks }) {
             tasks.map((curr, i) => (
               <Task
                 key={`${type}${i}`}
+                listID={`${type}${i}`}
                 data={curr}
-                openedTask={openedTask}
-                setOpenedTask={setOpenedTask}
                 type={type}
+                active={activeTask == `${type}${i}` ? true : false}
+                toggle={toggle}
               />
             ))}
         </div>
